@@ -93,6 +93,7 @@ sm_webapp_s3_bucket:
 sm_webapp_hostname:
 sm_webapp_google_client_id: ""
 sm_webapp_google_client_secret: ""
+upload_destination: "s3"
 
 sm_ansible_url: https://github.com/METASPACE2020/sm-engine-ansible.git
 sm_ansible_branch: rel-v0.6
