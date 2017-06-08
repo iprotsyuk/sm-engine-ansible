@@ -17,6 +17,7 @@
     name: ubuntu
     shell: /bin/bash
     groups: sudo
+    # TODO: put NOPASSWD:ALL in /etc/sudoers(.d.)
 
 - name: Upload ssh key file "{{ pub_key_file }}"
   authorized_key: user=ubuntu key="{{ lookup('file', '{{ pub_key_file }}') }}"
@@ -44,3 +45,6 @@
 - name: Add swap file
   script: increase_swap.sh {{ swapsize }}
   when: swapsize|int > 0
+
+- name: Install UTF-8 locale
+  command: locale-gen en_US.UTF-8 

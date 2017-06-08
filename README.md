@@ -9,9 +9,9 @@ Make sure you have the following tools installed:
 
 `git clone https://github.com/intsco/sm-engine-ansible.git`
 
-## Setting up single instance SM engine in Virtual Box
+## Setting up single instance SM engine with Vagrant and Docker
 
-`cd sm-engine-ansible/vbox`
+`cd sm-engine-ansible/vagrant`
 
 `cp group_vars/all.yml.template group_vars/all.yml`
 

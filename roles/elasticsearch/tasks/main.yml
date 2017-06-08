@@ -18,6 +18,8 @@
 
 - name: Install ElasticSearch
   command: dpkg -i /tmp/elasticsearch-{{ elasticsearch_version }}.deb
+  environment:
+    ES_SKIP_SET_KERNEL_PARAMETERS: "true"
 
 - name: Make ElasticSearch to listen to any ip address
   lineinfile:
@@ -40,8 +42,8 @@
 - name: ES conf update restart
   service: name=elasticsearch state=restarted
 
-- name: Start EleasticSearch service
+- name: Start ElasticSearch service
   service: name=elasticsearch state=running
 
-- name: Start EleasticSearch on boot
+- name: Start ElasticSearch on boot
   service: name=elasticsearch enabled=true

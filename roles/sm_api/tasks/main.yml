@@ -58,7 +58,7 @@
   args:
     chdir: /opt/dev/sm
     executable: /bin/bash
-  shell: "source {{ venv }}/bin/activate {{ conda_env }} && pip install -U ."
+  shell: "source {{ venv }}/bin/activate {{ conda_env }} && pip install -U --upgrade-strategy=only-if-needed ."
 
 - name: Make sure that a directory for the SM logs exists
   file: path={{ sm_home }}/logs state=directory mode=0755

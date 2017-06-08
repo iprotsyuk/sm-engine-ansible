@@ -15,6 +15,7 @@
 
 - name: Drop postgres cluster created by default  #FIXME
   command: pg_dropcluster {{ postgres_version }} main
+  ignore_errors: yes
 
 - name: Create postgres cluster
   command: pg_createcluster {{ postgres_version }} main --locale en_US.UTF-8
